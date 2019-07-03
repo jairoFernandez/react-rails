@@ -1,22 +1,24 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Post, { Person } from './Post'
+import PostDemo from './PostDemo';
+import NewComponent from './my_subdirectory/NewComponent';
 
 class HelloWorld extends React.Component {
-
   renderPost = (posts) => {
-    return (<section className="section">
-      <div className="container is-fluid">
-        {posts && posts.map(post => {
-          return (<Post
-            key={post.id}
-            title={post.title}
-            published={post.published}
-            publishedBy={new Person(post.publishedBy.name)}
-          />)
-        })}
-    </div>
-    </section>)
+    return (
+      <section className="section">
+        <div className="container is-fluid">
+          {posts && posts.map(post => {
+            return (<Post
+              key={post.id}
+              title={post.title}
+              published={post.published}
+              publishedBy={new Person(post.publishedBy.name)}
+            />)
+          })}
+      </div>
+      </section>)
   }
 
   render () {
@@ -25,7 +27,8 @@ class HelloWorld extends React.Component {
       <React.Fragment>
         <p>Greeting!!! {this.props.greeting}</p>
         <hr/>
-        {/* {this.renderPost(posts)} */}
+        {/* <NewComponent /> */}
+        {this.renderPost(posts)}
       </React.Fragment>
     );
   }
