@@ -4,6 +4,7 @@ import Post, { Person } from './Post'
 
 class HelloWorld extends React.Component {
   render () {
+    const { posts } = this.props;
     console.log(this.props)
     return (
       <React.Fragment>
@@ -11,16 +12,14 @@ class HelloWorld extends React.Component {
         <hr/>
         <section className="section">
           <div className="container is-fluid">
-            <Post
-              title={"Clean code"}
-              published={true}
-              publishedBy={new Person("Uncle bob")}
-            />
-            <Post
-              title={"Clean code"}
-              published={true}
-              publishedBy={new Person("Uncle bob")}
-            />
+            {posts && posts.map(post => {
+              return (<Post
+                key={post.id}
+                title={post.title}
+                published={post.published}
+                publishedBy={new Person(post.publishedBy.name)}
+              />)
+            })}
         </div>
       </section>
           
@@ -30,6 +29,7 @@ class HelloWorld extends React.Component {
 }
 
 HelloWorld.propTypes = {
-  greeting: PropTypes.string
+  greeting: PropTypes.string,
+  posts: PropTypes.array
 };
 export default HelloWorld
