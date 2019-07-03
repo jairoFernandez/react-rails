@@ -3,26 +3,29 @@ import PropTypes from "prop-types"
 import Post, { Person } from './Post'
 
 class HelloWorld extends React.Component {
+
+  renderPost = (posts) => {
+    return (<section className="section">
+      <div className="container is-fluid">
+        {posts && posts.map(post => {
+          return (<Post
+            key={post.id}
+            title={post.title}
+            published={post.published}
+            publishedBy={new Person(post.publishedBy.name)}
+          />)
+        })}
+    </div>
+    </section>)
+  }
+
   render () {
     const { posts } = this.props;
-    console.log(this.props)
     return (
       <React.Fragment>
-        Greeting!!! {this.props.greeting}
+        <p>Greeting!!! {this.props.greeting}</p>
         <hr/>
-        <section className="section">
-          <div className="container is-fluid">
-            {posts && posts.map(post => {
-              return (<Post
-                key={post.id}
-                title={post.title}
-                published={post.published}
-                publishedBy={new Person(post.publishedBy.name)}
-              />)
-            })}
-        </div>
-      </section>
-          
+        {/* {this.renderPost(posts)} */}
       </React.Fragment>
     );
   }
