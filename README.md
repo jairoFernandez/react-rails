@@ -1,24 +1,7 @@
-# README
+# React + rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Meetup Rails metal / React + Rails](https://www.meetup.com/es-ES/bogota-ruby-meetup/events/fpqmxqyzkbmb/?rv=ea2_v2&_xtd=gatlbWFpbF9jbGlja9oAJDg1MzhhNGZhLTczODYtNGFmNS05YzQwLTcyZmIyYmVkOTc4Yg)
 
-Things you may want to cover:
+[Slides charla](https://slides.com/jairofernandez-1/react-rails-1/fullscreen)
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Jairo Fernández
